@@ -128,7 +128,7 @@ $('#addPost').click(async function(event){
       console.log(new_post);
     }
     $("#loading-bar-spinner").hide();
-
+    renderPostList()
   event.preventDefault();
 })
 
@@ -148,6 +148,7 @@ console.log("CLicked")
   console.log("--------------------------")
   console.log("Just Clicked The Buy Button")
   event.preventDefault();
+  console.log("Tip Successfully Made")
   $("#loading-bar-spinner").hide();
 
 });
