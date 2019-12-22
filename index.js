@@ -132,7 +132,7 @@ $('#addPost').click(async function(event){
 
  
 // // Tip A Post
-$("#getEvent").on("click",".buyBtn", async function(event){
+$("#getEvent").on("click",".tipBtn", async function(event){
   $("#loading-bar-spinner").show();
 
   const dataIndex = event.target.id
