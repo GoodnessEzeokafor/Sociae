@@ -44,16 +44,19 @@ payable contract Post=
     let post_author  = post.author : address
     Chain.spend(post_author, Call.value)
     let post_tipped = post.tipped + Call.value
-    let updated_post = {id=post.id,
-            title=post.title,
-            content=post.content,
-            timestamp=post.timestamp,
-            author = post.author,
-            tipped=post.tipped,
-            updated=Chain.timestamp
-            }
-    put(state{posts[_id]=updated_post})`
-const contractAddress ='ct_21V1chTXNQkj9kPZJMCKEPqpHtoXBPgpoTuLBprXoTWBpUAr9Q'
+    if(Call.value > 0)
+      let updated_post = {id=post.id,
+                title=post.title,
+                content=post.content,
+                timestamp=post.timestamp,
+                author = post.author,
+                tipped=post.tipped,
+                updated=Chain.timestamp
+                }
+      put(state{posts[_id]=updated_post})
+    else
+      abort("NO ENOUGH ae")`
+const contractAddress ='ct_2NfLfaJx2y83WcX3xoaqVyJveCQyJDAbTRTJ9qXazGLf6VwTyA'
 
 var client = null // client defuault null
 var post_arr = [] // empty arr
