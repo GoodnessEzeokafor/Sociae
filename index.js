@@ -132,12 +132,12 @@ $('#addPost').click(async function(event){
 
  
 // // Tip A Post
-$("#getEvent").on("click",".tipBtn", async function(event){
+$("#getAllPost").on("click",".tipBtn", async function(event){
   $("#loading-bar-spinner").show();
-
+console.log("CLicked")
   const dataIndex = event.target.id
   console.log(typeof dataIndex)
-  const tipped_post = await contractCall('buy_ticket', [dataIndex],3*1000000000000000000);
+  const tipped_post = await contractCall('buy_ticket', [dataIndex],1.5*1000000000000000000);
   console.log(tipped_post)
   
   console.log("-----------------")
