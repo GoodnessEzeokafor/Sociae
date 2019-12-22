@@ -85,6 +85,9 @@ async function contractCall(func, args, value) {
 
 function renderPostList(){
   let template = $('#template').html();
+  post_arr = post_arr.sort(function (a, b) {
+    return b.tipped - a.tipped
+  })
   Mustache.parse(template);
   var rendered = Mustache.render(template, {post_arr});
   $("#getAllPost").html(rendered); // id to render your temlplate
