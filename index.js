@@ -97,6 +97,7 @@ window.addEventListener('load', async() => {
   var user_address = await client.address()
   document.getElementById("user_address").innerText = user_address; // adds the account address to the navbar
   postListLength = await callStatic('getPostLength',[]);
+  console.log("Post Log", postListLength)
   for(let i = 1; i < postListLength + 1; i++){
     const getPostList = await callStatic('get_post_by_index', [i]);
     post_arr.push({
