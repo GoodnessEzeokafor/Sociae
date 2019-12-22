@@ -111,7 +111,7 @@ window.addEventListener('load', async() => {
       timestamp:new Date(getPostList.timestamp),
       author:getPostList.author,
       tipped:getPostList.tipped,
-      updated:getPostList.updated
+      updated:new Date(getPostList.updated)
     })
   }
   renderPostList();  
