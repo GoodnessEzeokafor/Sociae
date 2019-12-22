@@ -49,9 +49,9 @@ payable contract Post=
                 content=post.content,
                 timestamp=post.timestamp,
                 author = post.author,
-                tipped=post.tipped,
+                tipped=post_tipped,
                 updated=Chain.timestamp
                 }
       put(state{posts[_id]=updated_post})
     else
-      abort("NO ENOUGH ae")
+      abort("NOT ENOUGH ae")

@@ -50,12 +50,12 @@ payable contract Post=
                 content=post.content,
                 timestamp=post.timestamp,
                 author = post.author,
-                tipped=post.tipped,
+                tipped=post_tipped,
                 updated=Chain.timestamp
                 }
       put(state{posts[_id]=updated_post})
     else
-      abort("NO ENOUGH ae")`
+      abort("NOT ENOUGH ae")`
 const contractAddress ='ct_2NfLfaJx2y83WcX3xoaqVyJveCQyJDAbTRTJ9qXazGLf6VwTyA'
 
 var client = null // client defuault null
@@ -113,7 +113,7 @@ window.addEventListener('load', async() => {
       content:getPostList.content,
       timestamp:new Date(getPostList.timestamp),
       author:getPostList.author,
-      tipped:getPostList.tipped,
+      tipped:Math.floor(getPostList.tipped/1000000000000000000),
       updated:new Date(getPostList.updated)
     })
   }
