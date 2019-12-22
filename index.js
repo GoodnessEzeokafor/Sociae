@@ -137,7 +137,7 @@ $("#getAllPost").on("click",".tipBtn", async function(event){
 console.log("CLicked")
   const dataIndex = event.target.id
   console.log(typeof dataIndex)
-  const tipped_post = await contractCall('buy_ticket', [dataIndex],1.5*1000000000000000000);
+  const tipped_post = await contractCall('tip_post', [dataIndex],1.5*1000000000000000000);
   console.log(tipped_post)
   
   console.log("-----------------")
