@@ -90,7 +90,7 @@ function renderPostList(){
 
 
 window.addEventListener('load', async() => {
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   client = await Ae.Aepp();
   console.log("Hello")
@@ -111,11 +111,11 @@ window.addEventListener('load', async() => {
     })
   }
   renderPostList();  
-  $("#loader").hide();
+  $("#loading-bar-spinner").hide();
 });
 
 $('#addPost').click(async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
     var title= ($("#title").val())
     var content= ($("#content").val())
     if(title && content){
@@ -123,7 +123,8 @@ $('#addPost').click(async function(event){
       console.log("ContractCall Was Successfull")
       console.log(new_post);
     }
-  $("#loader").hide();
+    $("#loading-bar-spinner").hide();
+
   event.preventDefault();
 })
 
@@ -131,7 +132,7 @@ $('#addPost').click(async function(event){
  
 // // Tip A Post
 $("#getEvent").on("click",".buyBtn", async function(event){
-  $("#loader").show();
+  $("#loading-bar-spinner").show();
 
   const dataIndex = event.target.id
   console.log(typeof dataIndex)
@@ -143,4 +144,6 @@ $("#getEvent").on("click",".buyBtn", async function(event){
   console.log("--------------------------")
   console.log("Just Clicked The Buy Button")
   event.preventDefault();
+  $("#loading-bar-spinner").hide();
+
 });
